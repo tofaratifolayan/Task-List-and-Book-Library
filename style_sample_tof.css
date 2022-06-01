@@ -1,0 +1,406 @@
+/* 
+    COMP 333: Software Engineering
+    Sebastian Zimmeck (szimmeck@wesleyan.edu)
+*/
+
+/* 
+    It is a good idea to include all styles in a separate Style Sheet such as 
+    this one.
+
+    Start styling with the general elements of your page, e.g., body style, 
+    pargraph style, ... . Then, you can modify those styles for individual 
+    instances using class tags, id tags, ... .
+*/
+
+/* 
+    You can import a font from Google at https://fonts.google.com/
+*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap');
+
+/* 
+    The imported font should be applied to all body text.
+*/
+body {
+    font-family: 'Noto Sans SC', sans-serif;
+    background-image: url("https://cdn.pixabay.com/photo/2020/11/25/14/14/cat-5775895_1280.jpg");
+}
+
+p {
+    color:white;
+}
+
+/* 
+    There is one white-div in our html_sample.html, which should have white 
+    font. 
+    
+    You can refer in Style Sheets to ids using #.
+*/
+#white-div {
+    color: white;
+}
+
+#header-p{
+    font-size: 70px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #fff;
+}
+
+.button {
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+/* 
+    You can refer in Style Sheets to classes using the dot .
+*/
+.padding-color-class {
+    /* 
+        Instead of color names you can also use hexdecimal values. The lower the
+        number, the darker.
+    */
+    background-color: #000000;
+    /* 
+        You can also give colors in RGB values (0 to 255). If you are expecting 
+        older browsers using your site, refrain from using RGB formatting.
+    */
+    color: rgb(100, 168, 200);
+}
+
+.wrapper {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 375px; 
+  padding-right: 10px;
+  padding-left: 10px;
+  z-index: 2;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 37.5%;
+    /* resize: horizontal;
+    overflow: auto; */
+    text-align: center;
+    color: white;
+  }
+
+.input{
+    border:0;
+    outline:none;
+    color:#8b7d77;
+}
+
+.search_wrap{
+    width: 375px;
+    margin: 30px auto;
+}
+
+.search_box{
+    position: relative;
+    width: 375px;
+    height: 60px;
+}
+
+.input2{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    padding: 10px 20px;
+    border-radius: 3px;
+    font-size: 18px;
+}
+
+.button2{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 83px;
+    background: #7690da;
+    z-index: 1;
+    cursor: pointer;
+}
+
+
+
+.button2:hover{
+    background: #708bd2;
+}
+
+.fa-search{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 20px;
+}
+
+#bg-img {
+     
+    min-height: 100%;
+    min-width: 816px;
+        
+    width: 100%;
+    height: auto;
+        
+    position: fixed;
+    top: 100px;
+    left: 0;
+    z-index: 1;
+}
+
+@media screen and (max-width: 1024px) { /* Specific to this particular image */
+  #bg-img {
+    left: 50%;
+    margin-left: -512px;
+  }
+}
+
+
+.background-image-class {
+    height: 100%;
+    width: 100%;
+    background-image: url(https://cdn.pixabay.com/photo/2020/11/25/14/14/cat-5775895_1280.jpg); 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+.css-box-model-class {
+    /* 
+        Demonstrates the CSS Box Model
+    */
+    border-width: 2px;
+    /* 
+        In order to see the border, you will need a border style.
+     */
+    border-style: solid;
+    /* 
+        You can add a margin to all four borders. If there is only one value, 
+        all borders are affected You can specify in clockwise order: 
+        top, right, bottom, left.
+    */
+    margin: 10px 5px 15px 25px;
+    /* 
+        While margins are at the outside of the border, paddings are at the 
+        inside. You can specify a single value for all four margins, but you 
+        could also specify the padding individually the as for the margins.
+    */
+    padding: 50px;
+}
+
+/* 
+    Links can be styled with CSS as well. There are four states: 
+    link (original state), visited, hover, active (on click).
+    For example, on hover, change the link color to green. Also, hover can be 
+    applied to divs.
+*/
+a:hover {
+    color:green;
+}
+
+/* 
+    For your custom navbar, you can specify the unorderd list style.
+*/
+
+
+.navbar ul {
+    /* 
+        Remove bullet points.
+    */
+    list-style: none;
+    justify-items: center;
+    min-width: 1024px;
+    margin: 0px;
+    /* 
+        No padding.
+    */
+    padding: 0;
+    /* 
+        For navbars use background color that stands out.
+    */
+    background-color: #6495ED;
+    text-align: center;
+    flex-shrink: 3;
+    z-index: 2
+}
+
+/*  
+    Style individual list items.
+*/
+.navbar li {
+    width: 150px;
+    /* background-color: #000; */
+    /* border: 1px solid red; */
+    /* 
+        Show the navbar elements next to each other instead of on top of each 
+        other. 
+    */
+    justify-items: center;
+    padding: 10px;
+    display: inline-block;
+    line-height: 80px;
+    font-weight: 700;
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+.navbar ul ul
+{
+    position: absolute;
+    background: #6495ED;
+    display: none;
+    text-align: center;
+    z-index: 2;
+}
+
+.navbar ul li:hover > ul{
+    display: block;
+    z-index: 2;
+}
+
+.navbar ul li a:hover{
+    color: rgb(192, 135, 28);
+    z-index: 2;
+}
+
+
+.navbar ul ul li{
+    width: 150px;
+    height: 8px;
+    float: none;
+    display: list-item;
+    position: absolute;
+    /* left: 0px; */
+    right: 450px;
+    z-index: 2;
+    
+}
+/* 
+    Style links in navbar.
+*/
+.navbar a {
+    color:#fff;
+    text-decoration: none;
+}
+
+table, td {
+    border: 1px solid gray;
+}
+
+input {
+    /* 
+        Show different input on top of each other instead of next to each other.
+    */
+    display: block;
+}
+
+/* 
+    Style iframes.
+*/
+iframe {
+    width:100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border: dotted;
+    background-image: url(https://scontent-lga3-2.xx.fbcdn.net/v/t1.18169-9/19665419_10154819983437496_6153561956486719224_n.png?_nc_cat=107&ccb=1-5&_nc_sid=1cb0a9&_nc_ohc=J0a0WKOGtWgAX_2LAki&_nc_oc=AQlvVV2BqTn7rokAl-IziynXvkMlCyagT7aB6HLdJuofbk2Qakj9ui_Lz2lF_-PJvjA&_nc_ht=scontent-lga3-2.xx&oh=00_AT-A644ikYxa6lriaGvgGEW5COLplXn4zzYjV6B1XNlU8A&oe=62337558);
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    /* background-color: orange; */
+  }
+
+.flex-container > div {
+    /* background-color: grey; */
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+    color: white
+}
+
+.flex-container > ul {
+    list-style: none;
+    width: 500px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+}
+
+.flex-container > li {
+    width: 150px;
+    background-color: #000;
+    border: 1px solid red;
+    /* 
+        Show the navbar elements next to each other instead of on top of each 
+        other. 
+    */
+    padding: 10px;
+    display: inline-block;
+    line-height: 40px;
+}
+
+/* Bottom left text */
+.bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+  }
+  
+/* Top left text */
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+/* Top right text */
+.top-right {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+/* Bottom right text */
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 25%;
+  left:17.5%;
+  z-index: 2;
+  /* transform: translate(-50%, -50%); */
+}
+
+#foo {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+  }
+
+#sha{
+    position: fixed;
+    top: 18px;
+    right: 0  
+}
