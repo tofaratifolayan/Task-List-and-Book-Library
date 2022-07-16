@@ -4,26 +4,26 @@ const input = document.getElementById('input');
 const button = document.getElementById('button')
 const nextQuestion = document.getElementById('nextquestion');
 
+let randomNumber;
+
 function generateRandomNumber() {
-    let randomNumber = Math.round(Math.random() * 11);
-    return randomNumber;
+    randomNumber = Math.round(Math.random() * 11);  
 }
 
-var num = generateRandomNumber();
 
 button.addEventListener('click', (event) => {
     const elem = document.createElement('div');
     elem.classList.add('alert');
 
-    if (input.value == num){
+    if (input.value == randomNumber){
         elem.classList.add('alert-success');
-        elem.innerHTML = 'Yes it was ' + num;
+        elem.innerHTML = 'Yes it was ' + randomNumber;
     }
     else {
         elem.classList.add('alert-danger');
-        elem.innerHTML = 'No it was ' + num;
+        elem.innerHTML = 'No it was ' + randomNumber;
     }
-    console.log(elem)
+    // console.log(elem)
     output.append(elem);
 
     setTimeout(() => {

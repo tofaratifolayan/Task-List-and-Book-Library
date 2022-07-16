@@ -1,6 +1,6 @@
 const input = document.getElementById('input');
 const submitButton = document.getElementById('button');
-const reset = document.getElementById('reset');
+// const reset = document.getElementById('reset');
 const hint = document.getElementById('hint');
 const output = document.getElementById('output');
 const explanations = document.getElementById('explanations');
@@ -66,31 +66,42 @@ const movies = [
 ];
 
 function generateRandomQuestion() {
-  this.randomNumber = Math.round(Math.random() * 11);
-  this.randomElem = movies[this.randomNumber - 1];
-  explanations.innerHTML = this.randomElem.explanation;
+  randomNumber = Math.round(Math.random() * 11);
+  randomElem = movies[randomNumber - 1];
+  explanations.innerHTML = randomElem.explanation;
 }
+
+generateRandomQuestion();
 
 submitButton.addEventListener('click', (e) => {
   const elem = document.createElement('div');
   elem.classList.add('alert');
 
-  if (input.value == this.randomElem.title) {
+  if (input.value == randomElem.title) {
     elem.classList.add('alert-success');
-    elem.innerHTML = 'Yes, it was ' + this.randomElem.title;
-    <br/>
+    elem.innerHTML = 'Yes, it was ' + randomElem.title;
   } else {
     elem.classList.add('alert-danger');
-    elem.innerHTML = 'No, it was ' + this.randomElem.title;
-    <br/>
+    elem.innerHTML = 'No, it was ' + randomElem.title;
   }
-  output.appendChild(elem);
+  output.append(elem);
+
+  input.value = ""
 
   setTimeout(() => {
     elem.classList.remove('alert');
     elem.innerHTML = '';
   }, 2000);
 });
+
+
+function showHint() {
+  hint.innerHTML = movies[randomNumber - 1].hint;
+  setTimeout(() => {
+    hint.innerHTML = '';
+  }, 5000);
+}
+
 
 hintButton.addEventListener('click', (e) => {
   showHint();
@@ -100,11 +111,6 @@ nextQuestion.addEventListener('click', (e) => {
   generateRandomQuestion();
 });
 
-function showHint() {
-  hint.innerHTML = movies[this.randomNumber - 1].hint;
-  setTimeout(() => {
-    hint.innerHTML = '';
-  }, 5000);
-}
 
-generateRandomQuestion();
+
+
