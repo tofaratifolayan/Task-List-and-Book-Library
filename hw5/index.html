@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Task List</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class="container">
+            <div class="card p-3 mt-3">
+                <h1 class="text-center">Task List</h1>
+                <hr />
+                <h3 class="text-center">Our simple task list</h3>
+                
+                <div class="input-group my-3">
+                    <input type="text" class="form-control" id="input" placeholder="Task">
+                    <button class="btn btn-outline-secondary" type="button" id="button">+</button>
+                </div>
+                
+                <table class="table mt-5">
+                    <thead>
+                      <tr>
+                        <th>Task</th>
+                        <th>Completed</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody id="table-body">
+                      
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+        <script src="main.js"></script>
+    </body>
+</html>
