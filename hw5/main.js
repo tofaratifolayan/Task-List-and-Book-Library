@@ -1,5 +1,6 @@
 class Task {
-    constructor(task, completed){
+    constructor(id, task, completed){
+        this.id = id
         this.task = task;
         this.completed = completed;
     }
@@ -8,24 +9,26 @@ class Task {
 class UserInterface {
     constructor() {
         this.taskInput = document.getElementById('input');
-        this.button = document.getElementById('button');
+        this.form = document.getElementById('form');
         this.tableBody = document.getElementById('table-body');
 
         this.tasks = [];
     }
 
     bindEventListeners() {
-        this.button.addEventListener('click', (e) => this.onButtonClick(e));
+        this.form.addEventListener('submit', (e) => this.onFormSubmit(e));
     }
 
-    onButtonClick(event) {
+    onFormSubmit(event) {
         event.preventDefault();
 
         const task = new Task(
+            new Date().getTime(),
             this.taskInput.value,
             false
         );
 
+        console.log(task)
         this.tasks.push(task);
         this.populateTasksTable();
 
@@ -42,7 +45,8 @@ class UserInterface {
             const actionsCell = document.createElement('td');
 
             const isCompletedButton = document.createElement('button');
-            isCompletedButton.classList.add('btn btn-primary');
+            isCompletedButton.classList.add('btn');
+            isCompletedButton.classList.add('btn-primary');
 
             taskCell.innerHTML = task.task
             if(task.completed == false){
@@ -65,7 +69,7 @@ class UserInterface {
 
     onCompleteTaskClick(taskToComplete) {
         for(const task of this.tasks) {
-            if(task.task === taskToComplete.task){
+            if(task.id === taskToComplete.id){
                 task.completed = true;
             }
         }
