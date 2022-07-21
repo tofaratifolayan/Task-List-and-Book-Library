@@ -1,13 +1,6 @@
 import React, {useState} from 'react'
 import 'bootstrap/dist/css/bootstrap.css';
-
-class Task {
-  constructor(id, name, complete){
-    this.id = id;
-    this.name = name;
-    this.complete = complete;
-  }
-}
+import { Task } from '../models/task'
 
 export default function InputTask(props) {
 

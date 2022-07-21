@@ -11,7 +11,7 @@ export default function App() {
   const [tasks, setTasks] = useState([]);
 
   function onTaskCreated(task) {
-    setTasks(tasks.append(task))
+    setTasks(tasks.push(task))
   }
 
   function onTaskUpdated(task) {
@@ -29,7 +29,7 @@ export default function App() {
       <div className='card p-3 mt-3'>
         <h1 className="text-center">Task List</h1>
         <hr />
-        <h3 class="text-center">Our simple task list</h3>
+        <h3 className="text-center">Our simple task list</h3>
         <InputTask
           onTaskCreated={onTaskCreated}
         ></InputTask>
